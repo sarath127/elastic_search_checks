@@ -1,0 +1,101 @@
+
+                                    elastic search metrics
+
+metrics of elastic search
+
+
+1.search performence metrics
+
+1.Total number of queries	                   indices.search.query_total	Work: Throughput
+2.Total time spent on queries	               indices.search.query_time_in_millis	Work: Performance
+3.Number of queries currently in progress	   indices.search.query_current	Work: Throughput
+4.Total number of fetches	                   indices.search.fetch_total	Work: Throughput
+5.Total time spent on fetches	               indices.search.fetch_time_in_millis	Work: Performance
+6.Number of fetches currently in progress	   indices.search.fetch_current	Work: Throughput
+
+metrics to watch:
+query load
+query latency
+fetch latency
+
+
+2.index performence metrics
+
+1.Total number of documents indexed	             indices.indexing.index_total	Work: Throughput
+2.Total time spent indexing documents	           indices.indexing.index_time_in_millis	Work: Performance
+3.Number of documents currently being indexed	   indices.indexing.index_current	Work: Throughput
+4.Total number of index refreshes	               indices.refresh.total	Work: Throughput
+5.Total time spent refreshing                    indices	indices.refresh.total_time_in_millis	Work: Performance
+6.Total number of index flushes to disk	         indices.flush.total	Work: Throughput
+7.Total time spent on flushing indices to disk	 indices.flush.total_time_in_millis	Work: Performance
+
+metrics to watch:
+indexting latency
+flush latency
+
+
+memory usage and garbage collection
+
+1.Total count of young-generation garbage collections	      jvm.gc.collectors.young.collection_count (jvm.gc.collectors.ParNew.collection_count prior to vers. 0.90.10)	Other
+2.Total time spent on young-generation garbage collections	jvm.gc.collectors.young.collection_time_in_millis (jvm.gc.collectors.ParNew.collection_time_in_millis prior to vers. 0.90.10)	Other
+3.Total count of old-generation garbage collections	        jvm.gc.collectors.old.collection_count (jvm.gc.collectors.ConcurrentMarkSweep.collection_count prior to vers. 0.90.10)	Other
+4.Total time spent on old-generation garbage collections	  jvm.gc.collectors.old.collection_time_in_millis (jvm.gc.collectors.ConcurrentMarkSweep.collection_time_in_millis prior to vers. 0.90.10)	Other
+5.Percent of JVM heap currently in use	                    jvm.mem.heap_used_percent	Resource: Utilization
+6.Amount of JVM heap committed	                            jvm.mem.heap_committed_in_bytes	Resource: Utilization
+
+metrics to watch:
+JVM heap in use
+JVM heap used vs. JVM heap committed
+Garbage collection duration and frequency
+memory usage
+
+4.Host-level network and system metrics
+
+
+1.Available disk space	Resource: Utilization
+2.I/O utilization	Resource: Utilization
+3.CPU usage	Resource: Utilization
+4.Network bytes sent/received	Resource: Utilization
+5.Open file descriptors	Resource: Utilization
+
+metrics to watch:
+I/O utilization
+CPU utilization on your nodes:
+Network bytes sent/received
+Open file descriptors
+HTTP connections
+
+
+
+5.cluster healthy node availability metrics
+
+1.Cluster status (green, yellow, red)	       cluster.health.status	Other
+2.Number of nodes	                           cluster.health.number_of_nodes	Resource: Availability
+3.Number of initializing shards	             cluster.health.initializing_shards	Resource: Availability
+4.Number of unassigned shards	               cluster.health.unassigned_shards	Resource: Availability
+
+
+
+6.Resource saturation and errors metrics
+
+1.Number of queued threads in a thread pool	thread_pool.bulk.queue
+                                            thread_pool.index.queue
+                                            thread_pool.search.queue
+                                            thread_pool.merge.queue	Resource: Saturation
+2.Number of rejected threads a thread pool	thread_pool.bulk.rejected
+                                            thread_pool.index.rejected
+                                            thread_pool.search.rejected
+                                            thread_pool.merge.rejected	Resource: Error
+
+metrics to watch
+Threadpool queues
+Bulk rejections and bulk queues:
+Cache usage metrics
+Fielddata cache
+Filter cache
+
+
+1.Size of the fielddata cache (bytes)	                              indices.fielddata.memory_size_in_bytes	Resource: Utilization
+2.Number of evictions from the fielddata cache	                    indices.fielddata.evictions	Resource: Saturation
+3.Size of the filter cache (bytes) (only pre-version 2.x)	          indices.filter_cache.memory_size_in_bytes	Resource: Utilization
+4.Number of evictions from the filter cache (only pre-version 2.x)	indices.filter_cache.evictions	Resource: Saturation

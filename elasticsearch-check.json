@@ -1,0 +1,84 @@
+{
+  "checks": {
+    "elasticsearch_check1": {
+      "command": "/etc/sensu/plugins/check-es-node-status.rb ",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check2": {
+      "command": "/etc/sensu/plugins/cpu_usage.rb ",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check3": {
+      "command": "/etc/sensu/plugins/current_index_Documents.rb ",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check4": {
+      "command": "/etc/sensu/plugins/Disk_usage.rb ",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check5": {
+      "command": "/etc/sensu/plugins/heap_usage.rb ",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check6": {
+      "command": "/etc/sensu/plugins/querysize.rb ",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check7": {
+      "command": "/etc/sensu/plugins/shared-allocation-status.rb",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check8": {
+      "command": "/etc/sensu/plugins/time_spent_on_flushing.rb ",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check9": {
+      "command": "/etc/sensu/plugins/time_spent_on_indexing.rb",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check10": {
+      "command": "/etc/sensu/plugins/time_spent_on_refreshing.rb",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check11": {
+      "command": "/etc/sensu/plugins/time_spent_on_queries.rb",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check12": {
+      "command": "/etc/sensu/plugins/time_spent_on_old_generation_garbage_collection.rb",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check13": {
+      "command": "/etc/sensu/plugins/time_spent_on_young_generation_garbage_collection.rb",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check13": {
+      "command": "/etc/sensu/plugins/totel_fetches.rb",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check13": {
+      "command": "/etc/sensu/plugins/totel_number_of_documents.rb",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    },
+    "elasticsearch_check13": {
+      "command": "/etc/sensu/plugins/unique_index.rb",
+      "interval": 30,
+      "subscribers": [ "ALL" ]
+    }
+  }
+}
